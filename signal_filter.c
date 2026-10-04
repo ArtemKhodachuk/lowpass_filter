@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     if (!init_filter(strtod(argv[1], NULL), &filter)) 
     {
-        printf("Error: invalid k value (should be between 0 and 1)");
+        printf("Error: invalid k value (0 <= k < 1)");
 
         return 1; 
     }
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     fprintf(output_file, "t,raw,filtered\n");
 
     fgets(line, sizeof(line), input_file);
-    
+
     while (fgets(line, sizeof(line), input_file) != NULL)
     {
         if (sscanf(line,"%lf,%lf",&time,&raw_value) != 2)

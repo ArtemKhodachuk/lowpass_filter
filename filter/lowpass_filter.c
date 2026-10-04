@@ -2,7 +2,7 @@
 
 bool init_filter(double k_value, lowpass_filter* filter) 
 {
-    if (k_value > 1.0 || k_value < 0) {
+    if (k_value >= 1.0 || k_value < 0) {
         return false;
     }
     
